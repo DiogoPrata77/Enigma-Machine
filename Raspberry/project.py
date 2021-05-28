@@ -231,8 +231,10 @@ def main():
 					add_msg_to_android_child_firebase(ref, new_msg)
 			last_msg = get_last_msg_from_raspberry_child_firebase(ref)
 			if (last_msg != ''):
-				print( last_msg )
-				channel.write(last_msg.encode())
+				#add terminator to string
+				msg = last_msg + "$"
+				print( msg  )
+				channel.write(msg.encode())
 	except KeyboardInterrupt:
 		channel.close()
 
