@@ -5,6 +5,7 @@ from firebase_admin import credentials,db
 from enigma.machine import EnigmaMachine
 from Rotor import Rotor, Rotor_location
 
+# Estabelecer coneção com o FireBase
 def init_connection_firebase():
 	cred = credentials.Certificate('firebase_sdk.json')	
 	msg = ""
@@ -135,7 +136,7 @@ def cipher_msg( machine, msg):
 	
 	return msg_enc
 
-
+# Atualizar as posições dos Rotors 
 def change_representation( key ):
 	key_str = ''
 	print('Change representation')
@@ -231,8 +232,10 @@ def main():
 					add_msg_to_android_child_firebase(ref, new_msg)
 			last_msg = get_last_msg_from_raspberry_child_firebase(ref)
 			if (last_msg != ''):
-				print( last_msg )
-				channel.write(last_msg.encode())
+				#add terminator to string
+				msg = last_msg + "$"
+				print( msg  )
+				channel.write(msg.encode())
 	except KeyboardInterrupt:
 		channel.close()
 

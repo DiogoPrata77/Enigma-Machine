@@ -4,7 +4,7 @@ class Rotor_location(Enum):
 	LEFT   = 'left'
 	MIDDLE = 'middle'
 	RIGHT  = 'right'
-
+# Construção do Rotor
 class Rotor():
 	@staticmethod
 	def create_rotor( rotor_location, config, pos):
