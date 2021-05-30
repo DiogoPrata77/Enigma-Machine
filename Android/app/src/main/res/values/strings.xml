@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Enigma Machine</string>
+
+    <string-array name="wiringsI">
+        <item>I</item>
+        <item>II</item>
+        <item>III</item>
+        <item>IV</item>
+        <item>V</item>
+    </string-array>
+
+    <string-array name="wiringsII">
+        <item>II</item>
+        <item>I</item>
+        <item>III</item>
+        <item>IV</item>
+        <item>V</item>
+    </string-array>
+
+    <string-array name="wiringsIII">
+        <item>III</item>
+        <item>I</item>
+        <item>II</item>
+        <item>IV</item>
+        <item>V</item>
+    </string-array>
+
+    <string-array name="wiringsVI">
+        <item>IV</item>
+        <item>I</item>
+        <item>II</item>
+        <item>III</item>
+        <item>V</item>
+    </string-array>
+
+    <string-array name="wiringsV">
+        <item>V</item>
+        <item>I</item>
+        <item>II</item>
+        <item>III</item>
+        <item>IV</item>
+    </string-array>
+</resources>
