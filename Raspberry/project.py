@@ -5,6 +5,7 @@ from firebase_admin import credentials,db
 from enigma.machine import EnigmaMachine
 from Rotor import Rotor, Rotor_location
 
+# Estabelecer coneção com o FireBase
 def init_connection_firebase():
 	cred = credentials.Certificate('firebase_sdk.json')	
 	msg = ""
@@ -135,7 +136,7 @@ def cipher_msg( machine, msg):
 	
 	return msg_enc
 
-
+# Atualizar as posições dos Rotors 
 def change_representation( key ):
 	key_str = ''
 	print('Change representation')
