@@ -298,11 +298,9 @@ void loop() {
   if (m.isEmpty()) {
     if (Serial.available()) {
       while (true) {
-        if (!Serial.available()) {
-          break;
-        }
+        if (!Serial.available()) continue;
         char r = (char)Serial.read();
-        //if (r == '\n') {
+        if (r == '$') break;
         m.append(String(r));
       }
       printRotors();
@@ -330,22 +328,22 @@ void loop() {
       last = &c1;
     }
     
-    advanceRotors();
     m.append(String(key));
+    advanceRotors();
     break;
   case '2':
     if (last == NULL) {
-    advanceRotors();
       last = &c2;
       m.append(String(c2.next()));
+    advanceRotors();
       break;
     }
 
     if (last != &c2) {
-    advanceRotors();
       last->reset();
       last = &c2;
       m.append(String(c2.next()));
+    advanceRotors();
       break;
     }
 
@@ -354,17 +352,17 @@ void loop() {
     break;
   case '3':
     if (last == NULL) {
-    advanceRotors();
       last = &c3;
       m.append(String(c3.next()));
+    advanceRotors();
       break;
     }
 
     if (last != &c3) {
-    advanceRotors();
       last->reset();
       last = &c3;
       m.append(String(c3.next()));
+    advanceRotors();
       break;
     }
 
@@ -373,17 +371,17 @@ void loop() {
     break;
   case '4':
     if (last == NULL) {
-    advanceRotors();
       last = &c4;
       m.append(String(c4.next()));
+    advanceRotors();
       break;
     }
 
     if (last != &c4) {
-    advanceRotors();
       last->reset();
       last = &c4;
       m.append(String(c4.next()));
+    advanceRotors();
       break;
     }
 
@@ -392,17 +390,17 @@ void loop() {
     break;
   case '5':
     if (last == NULL) {
-    advanceRotors();
       last = &c5;
       m.append(String(c5.next()));
+    advanceRotors();
       break;
     }
 
     if (last != &c5) {
-    advanceRotors();
       last->reset();
       last = &c5;
       m.append(String(c5.next()));
+    advanceRotors();
       break;
     }
 
@@ -411,17 +409,17 @@ void loop() {
     break;
   case '6':
     if (last == NULL) {
-    advanceRotors();
       last = &c6;
       m.append(String(c6.next()));
+    advanceRotors();
       break;
     }
 
     if (last != &c6) {
-    advanceRotors();
       last->reset();
       last = &c6;
       m.append(String(c6.next()));
+    advanceRotors();
       break;
     }
 
@@ -430,17 +428,17 @@ void loop() {
     break;
   case '7':
     if (last == NULL) {
-    advanceRotors();
       last = &c7;
       m.append(String(c7.next()));
+    advanceRotors();
       break;
     }
 
     if (last != &c7) {
-    advanceRotors();
       last->reset();
       last = &c7;
       m.append(String(c7.next()));
+    advanceRotors();
       break;
     }
 
@@ -449,17 +447,17 @@ void loop() {
     break;
   case '8':
     if (last == NULL) {
-    advanceRotors();
       last = &c8;
       m.append(String(c8.next()));
+    advanceRotors();
       break;
     }
 
     if (last != &c8) {
-    advanceRotors();
       last->reset();
       last = &c8;
       m.append(String(c8.next()));
+    advanceRotors();
       break;
     }
 
@@ -468,17 +466,17 @@ void loop() {
     break;
   case '9':
     if (last == NULL) {
-    advanceRotors();
       last = &c9;
       m.append(String(c9.next()));
+    advanceRotors();
       break;
     }
 
     if (last != &c9) {
-    advanceRotors();
       last->reset();
       last = &c9;
       m.append(String(c9.next()));
+    advanceRotors();
       break;
     }
 
@@ -488,17 +486,17 @@ void loop() {
     
   case '0':
     if (last == NULL) {
-    advanceRotors();
       last = &c0;
       m.append(String(c0.next()));
+    advanceRotors();
       break;
     }
 
     if (last != &c0) {
-    advanceRotors();
       last->reset();
       last = &c0;
       m.append(String(c0.next()));
+    advanceRotors();
       break;
     }
 
