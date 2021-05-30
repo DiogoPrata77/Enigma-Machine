@@ -1,1 +1,6 @@
 # Enigma-Machine
+
+
+#Compilação 
+
+#Correr
