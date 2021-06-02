@@ -35,6 +35,7 @@ class RotorsDB{
 class MainActivity : AppCompatActivity() {
 
     var rotorConfigBuffer = arrayOf("", "", "")
+    var rotorPosConfigBuffer  = arrayOf("", "", "")
     var machine : EnigmaMachine = EnigmaMachine(arrayOf("I", "II", "III"), "B", intArrayOf(0, 0 , 0), intArrayOf(0, 0 , 0))
 
     /**
@@ -147,9 +148,9 @@ class MainActivity : AppCompatActivity() {
 
         val entry: MutableMap<String, Any> = HashMap()
         entry["encrypted_msg"] = ciphertext
-        entry["rotor_left"] = RotorsDB(machine.leftRotor.name,machine.alphabet[machine.leftRotor.position].toString())
-        entry["rotor_middle"] = RotorsDB(machine.middleRotor.name, machine.alphabet[machine.middleRotor.position].toString())
-        entry["rotor_right"] = RotorsDB(machine.rightRotor.name, machine.alphabet[machine.rightRotor.position].toString())
+        entry["rotor_left"] = RotorsDB(machine.leftRotor.name,rotorPosConfigBuffer[0])
+        entry["rotor_middle"] = RotorsDB(machine.middleRotor.name, rotorPosConfigBuffer[1])
+        entry["rotor_right"] = RotorsDB(machine.rightRotor.name, rotorPosConfigBuffer[2])
 
         newCiphertextRef.setValue(entry)
 
@@ -243,6 +244,7 @@ class MainActivity : AppCompatActivity() {
         val left_pos = findViewById<TextInputEditText>(R.id.setPosLeft).text!!.toString()
         val middle_pos = findViewById<TextInputEditText>(R.id.setPosMiddle).text!!.toString()
         val right_pos = findViewById<TextInputEditText>(R.id.setPosRight).text!!.toString()
+        rotorPosConfigBuffer  = arrayOf(left_pos, middle_pos, right_pos)
 
         machine = EnigmaMachine(
                 rotorConfigBuffer,
